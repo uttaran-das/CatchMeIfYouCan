@@ -1,0 +1,31 @@
+body {
+  cursor: none;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
+}
+
+#deleteBtn {
+  padding: 15px 30px;
+  font-size: 1.2em;
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: none;
+}
+
+#customCursor {
+  position: fixed;
+  pointer-events: none;
+  transition: transform 0.3s ease-out;
+  transform: translate(-3px, -3px); 
+}
+
+#customCursor i {
+  font-size: 24px;
+  color: #333;
+}
