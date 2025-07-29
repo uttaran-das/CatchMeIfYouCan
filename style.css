@@ -6,6 +6,7 @@ body {
   justify-content: center;
   align-items: center;
   background-color: #f0f0f0;
+  overflow: hidden;
 }
 
 #deleteBtn {
@@ -21,11 +22,32 @@ body {
 #customCursor {
   position: fixed;
   pointer-events: none;
-  transition: transform 0.3s ease-out;
-  transform: translate(-3px, -3px); 
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-#customCursor i {
+#pointerIcon {
   font-size: 24px;
   color: #333;
+}
+
+#handIcon {
+  position: absolute;
+  font-size: 50px;
+  color: #333;
+  top: -20px;
+  left: -60px;
+
+  opacity: 0;
+
+  transform: rotate(-10deg);
+
+  transition: opacity 0.3s ease-in-out;
+}
+
+#customCursor.is-pushed {
+  transform: translateX(500px);
+}
+
+#customCursor.is-pushed #handIcon {
+  opacity: 1;
 }

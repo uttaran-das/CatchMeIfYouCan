@@ -3,32 +3,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const customCursor = document.getElementById('customCursor');
 
   document.addEventListener('mousemove', (e) => {
-    const { clientX, clientY } = e;
-    customCursor.style.left = `${clientX}px`;
-    customCursor.style.top = `${clientY}px`;
+    customCursor.style.left = `${e.clientX}px`;
+    customCursor.style.top = `${e.clientY}px`;
   });
 
-  deleteBtn.addEventListener('mouseenter', (e) => {
-    const btnRect = deleteBtn.getBoundingClientRect();
-    const cursorRect = customCursor.getBoundingClientRect();
-
-    const btnCenterX = btnRect.left + btnRect.width / 2;
-    const btnCenterY = btnRect.top + btnRect.height / 2;
-
-    const cursorCenterX = cursorRect.left + cursorRect.width / 2;
-    const cursorCenterY = cursorRect.top + cursorRect.height / 2;
-
-    const deltaX = cursorCenterX - btnCenterX;
-    const deltaY = cursorCenterY - btnCenterY;
-
-    const moveDistance = 100;
-    const moveX = (deltaX / Math.abs(deltaX || 1)) * moveDistance;
-    const moveY = (deltaY / Math.abs(deltaY || 1)) * moveDistance;
-
-    customCursor.style.transform = `translate(${moveX}px, ${moveY}px)`;
+  deleteBtn.addEventListener('mouseenter', () => {
+    customCursor.classList.add('is-pushed');
   });
 
   deleteBtn.addEventListener('mouseleave', () => {
-    customCursor.style.transform = 'translate(0, 0)';
+    customCursor.classList.remove('is-pushed');
   });
 });
