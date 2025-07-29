@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const deltaX = cursorCenterX - btnCenterX;
     const deltaY = cursorCenterY - btnCenterY;
 
-    const moveDistance = 100; // Distance to move the cursor away
+    const moveDistance = 100;
     const moveX = (deltaX / Math.abs(deltaX || 1)) * moveDistance;
     const moveY = (deltaY / Math.abs(deltaY || 1)) * moveDistance;
 
